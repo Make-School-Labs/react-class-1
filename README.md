@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Class 1
 
-## Available Scripts
+This sample React app has a few example components that outline some of the basic concepts of creating React Components. 
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+This project was bootstrapped with [Create React App](create-react-app-notes.md). Install and run by following these instructions: 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Down this project from GitHub
+1. Open a terminal and navigate to the project folder
+1. Install with `npm install`
+1. Run with `npm start`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The project should open in a browser window at `http://localhost:3000`
 
-### `npm test`
+## Concepts covered 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Components 
+  - Simple/Stateless
+  - Stateful  
+  - Props
+  - State 
+  - Component lifecycle methods 
+  - Nesting Components 
 
-### `npm run build`
+## Challenges 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Challenge 1**: 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Take a look  at App.js. Ask yourself these questions?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Is this a simple/Stateless component or stateful component?
+1. Would it work as a stateless component? 
 
-### `npm run eject`
+App is a stateful component but it doesn't define state! It could be simplified into a stateless component. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Challenge 2**: 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Nesting components is important. It's how React projects are built! Reusing components makes your code DRY, it allows you to work faster, and makes it easier to reason about your code. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Make a new component that contains two nested components a Title and Button. **Make this a stateful component**. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+State is an important feature for some components. If a component needs internal logic and values to manage how it is displayed you will want to make a stateful component. 
 
-## Learn More
+Name your component: OpenClosed
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Challenge 3**: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add State to the OpenClosed component. You need a property that says whether component is open or closed. 
 
-### Code Splitting
+Remember state is an object and the values you work with should saved as properties on that object. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+`this.state = { isOpen: false }`
 
-### Analyzing the Bundle Size
+**Challenge 4**: 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Use properties on state to determine what your Component displays. 
 
-### Making a Progressive Web App
+Make the Title in your OpenClosed component display "OPEN" when `this.state.isOpen` is `true` and "CLOSED" when it is `false`. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+**Challenge 5**: 
 
-### Advanced Configuration
+Changing state causes components to render. You'll never need to call the `render()` method directly. The syatem will always call render when something changes. In other words changing state or props will trigger a render. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Never set state directly: `this.state.someProp = 'new value'`. Instead always change state by calling setState() with an obnject that has the properties and new values. For example: `this.setState({ someProp: 'new value'})`. 
 
-### Deployment
+Setup an onClick that changes the isOpen property on state. From false to true. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
